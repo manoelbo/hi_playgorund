@@ -1,0 +1,66 @@
+{{ 'section-session-cards.css' | asset_url | stylesheet_tag }}
+<div class="session-cards">
+    <div class="page-width">
+        <h4>{{ section.settings.title }}</h4>
+
+        <ul class="contains-content-container grid grid--1-col-mobile-down  grid--2-col-tablet-down grid--3-col-desktop" >
+            {%- for block in section.blocks -%}
+            {%- if block.settings.product != blank -%}
+            <a href="{{ block.settings.product.url }}">
+            <li class="grid__item card">
+                <div class="img-canvas">
+                    <img src="{{ block.settings.product.featured_image | image_url }}" alt="teste">
+                </div>
+                <div class="card-info">
+                <h3>{{ block.settings.product.title }}</h3>
+                    <div class="staff-info">
+                        <div class="staff-canvas">
+                            <img src="{{ block.settings.product.metafields.custom.main_facilitator_photo | image_url }}" alt="facilitator {{ block.settings.product.metafields.custom.main_facilitator_name }}">
+                        </div>
+                        <span>Facilitated by {{ block.settings.product.metafields.custom.main_facilitator_name }} or another {{ block.settings.product.metafields.custom.number_of_facilitator_available }}</span>
+                    </div>
+                </div>
+            </li>
+            </a>
+            {%- endif -%}
+            {%- endfor -%}
+        </ul>
+
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Session Cards",
+        "class": "seciton",
+        "tag": "section",
+        "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+            }
+          ],
+        "blocks": [
+            {
+                "type": "card",
+                "name": "Card",
+                "settings": [
+                    {
+                        "type": "product",
+                        "id": "product",
+                        "label": "Card Product"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Session Cards",
+                "settings": {
+                    "title": "Popular"
+                }
+            }
+        ]
+    }
+{% endschema %}

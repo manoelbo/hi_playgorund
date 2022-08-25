@@ -1,0 +1,59 @@
+.session-cards h4 {
+    color: white;
+    font-weight: medium;
+    font-size: 24px;
+}
+
+.session-cards a {
+    display: contents;
+}
+
+.session-cards ul li {
+    background-color: white;
+    border-radius: 16px;
+}
+
+.session-cards .card-info {
+    padding: 16px;
+}
+
+.session-cards ul li .img-canvas {
+    width: 100%;
+    height: 160px;
+}
+
+.session-cards ul li .img-canvas img {
+    width: 100%;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.session-cards ul li h3 {
+    font-size: 18px;
+    font-weight: medium;
+    color: #111111;
+}
+
+.session-cards .staff-info  {
+    display: flex;
+    align-items: center;
+}
+
+.session-cards .staff-info .staff-canvas {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.session-cards .staff-info .staff-canvas img {
+    width: 40px;
+    border-radius: 100%;
+    height: 40px;
+
+}
+
+.session-cards .staff-info span {
+    font-size: 13px;
+    color: #111111;
+    flex: 5;
+}
